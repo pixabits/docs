@@ -123,7 +123,7 @@ If you unstake tokens the validator node enters a stake cooldown period. During 
 
 To ensure the operator understands this unstake operation is not reversible and cannot be shortened, there are additional calculations to be performed in the unstake command. You need to include the stake release block height which should be at least the current block height plus the cooldown period, and 5-10 blocks to allow for chain processing delays.
 
-For example, if the current block height was 5000, you'd add 250,000 for the stake withdrawl cooldown period, plus an additional 10 blocks to allow for chain processing delays. Therefore the `stake-release-height` = `5000 + 250000 + 10` or `255010`.
+For example, if the current block height was 5000, you'd add 250,000 for the stake withdrawl cooldown period, plus an additional 60 blocks to allow for chain processing delays. Therefore the `stake-release-height` = `5000 + 250000 + 60` or `255060`.
 
 The cooldown length, in blocks, is called `stake_withdrawal_cooldown` and is a chain variable. This variable is viewable by running `miner ledger variables stake_withdrawal_cooldown`.
 
